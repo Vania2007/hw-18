@@ -15,4 +15,3 @@ $accounts = [
     ['login' => "andriy", 'pass' => 'andriy357', 'role' => 'admin'],
     ['login' => "natalia", 'pass' => 'natasha098', 'role' => 'admin'],
 ];
-?>

@@ -8,6 +8,9 @@ if (isset($_POST['submitB'])) {
     $pass = htmlspecialchars(trim($_POST['pass']));
 
     if (empty($login) || empty($pass)) {
+        $error = "Будь ласка, заповніть обидва поля.";
+    } elseif (strlen($pass) < 4) {
+        $error = "Пароль має складатися не менше ніж із 4 символів.";
     } else {
         $userFound = false;
         foreach ($accounts as $account) {
@@ -36,7 +39,7 @@ if (isset($_POST['submitB'])) {
 </head>
 <body>
 <h2>Login</h2>
-<?php if ($error){ ?>
+<?php if ($error) {?>
     <strong><div style="color: red;"><?php echo $error; ?></div></strong>
 <?php }?>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
